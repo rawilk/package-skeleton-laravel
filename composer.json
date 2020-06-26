@@ -1,17 +1,17 @@
 {
-    "name": "spatie/:package_name",
+    "name": "rawilk/:package_name",
     "description": ":package_description",
     "keywords": [
-        "spatie",
+        "rawilk",
         ":package_name"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/rawilk/:package_name",
     "license": "MIT",
     "authors": [
         {
             "name": ":author_name",
             "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "homepage": "https://randallwilk.dev",
             "role": "Developer"
         }
     ],
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Rawilk\\Skeleton\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Rawilk\\Skeleton\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "Rawilk\\Skeleton\\SkeletonServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "Skeleton": "Rawilk\\Skeleton\\SkeletonFacade"
             }
         }
     },

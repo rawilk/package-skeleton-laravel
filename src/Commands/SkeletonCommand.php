@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace Rawilk\Skeleton\Commands;
 
 use Illuminate\Console\Command;
 

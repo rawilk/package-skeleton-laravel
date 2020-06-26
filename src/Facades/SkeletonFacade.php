@@ -1,15 +1,15 @@
 <?php
 
-namespace Spatie\Skeleton;
+namespace Rawilk\Facades\Skeleton;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Spatie\Skeleton\Skeleton
+ * @see \Rawilk\Skeleton\Skeleton
  */
 class SkeletonFacade extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'skeleton';
     }

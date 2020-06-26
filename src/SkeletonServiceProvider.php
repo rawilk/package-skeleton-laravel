@@ -1,21 +1,21 @@
 <?php
 
-namespace Spatie\Skeleton;
+namespace Rawilk\Skeleton;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\Skeleton\Commands\SkeletonCommand;
+use Rawilk\Skeleton\Commands\SkeletonCommand;
 
 class SkeletonServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/skeleton.php' => config_path('skeleton.php'),
+                __DIR__ . '/../config/skeleton.php' => config_path('skeleton.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__.'/../resources/views' => base_path('resources/views/vendor/skeleton'),
+                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/skeleton'),
             ], 'views');
 
             if (! class_exists('CreatePackageTable')) {
@@ -29,11 +29,11 @@ class SkeletonServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'skeleton');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'skeleton');
     }
 
-    public function register()
+    public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/skeleton.php', 'skeleton');
+        $this->mergeConfigFrom(__DIR__ . '/../config/skeleton.php', 'skeleton');
     }
 }

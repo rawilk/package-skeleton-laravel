@@ -6,14 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateSkeletonTable extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('skeleton_table', function (Blueprint $table) {
+        Schema::create('skeleton_table', static function (Blueprint $table) {
             $table->bigIncrements('id');
 
             // add fields
 
-            $table->timestamps();
+            $table->dateTime('created_at')->nullable();
+            $table->dateTime('updated_at')->nullable();
         });
     }
 }

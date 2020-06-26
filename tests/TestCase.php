@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Rawilk\Skeleton\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\Skeleton\SkeletonServiceProvider;
+use Rawilk\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -11,7 +11,7 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        $this->withFactories(__DIR__.'/database/factories');
+        $this->withFactories(__DIR__ . '/database/factories');
     }
 
     protected function getPackageProviders($app)
