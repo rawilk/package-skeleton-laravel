@@ -19,13 +19,13 @@ composer require rawilk/package-skeleton-laravel
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="rawilk\Skeleton\SkeletonServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Rawilk\Skeleton\SkeletonServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="rawilk\Skeleton\SkeletonServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Rawilk\Skeleton\SkeletonServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -38,7 +38,7 @@ return [
 ## Usage
 
 ``` php
-$skeleton = new Rawilk\Skeleton();
+$skeleton = new Rawilk\Skeleton;
 echo $skeleton->echoPhrase('Hello, Rawilk!');
 ```
 
