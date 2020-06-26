@@ -50,7 +50,7 @@
                 "Rawilk\\Skeleton\\SkeletonServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Rawilk\\Skeleton\\SkeletonFacade"
+                "Skeleton": "Rawilk\\Skeleton\\Facades\\SkeletonFacade"
             }
         }
     },
