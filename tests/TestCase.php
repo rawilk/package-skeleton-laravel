@@ -14,7 +14,7 @@ class TestCase extends Orchestra
         $this->withFactories(__DIR__ . '/database/factories');
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             SkeletonServiceProvider::class,
