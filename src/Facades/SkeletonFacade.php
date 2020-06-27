@@ -1,6 +1,6 @@
 <?php
 
-namespace Rawilk\Facades;
+namespace Rawilk\Skeleton\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
