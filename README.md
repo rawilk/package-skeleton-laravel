@@ -1,7 +1,7 @@
 # :package_description
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rawilk/:package_name.svg?style=flat-square)](https://packagist.org/packages/rawilk/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/rawilk/:package_name/run-tests?label=tests)](https://github.com/rawilk/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
+![Tests](https://github.com/rawilk/:package_name/workflows/Tests/badge.svg?style=flat-square)
 [![Total Downloads](https://img.shields.io/packagist/dt/rawilk/:package_name.svg?style=flat-square)](https://packagist.org/packages/rawilk/:package_name)
 
 **Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can also run `configure-skeleton.sh` to do this automatically.
