@@ -4,7 +4,7 @@ on:
     push:
         paths:
             - '**.php'
-            - 'psalm.xml'
+            - 'psalm.xml.dist'
 
 jobs:
     psalm:
@@ -21,7 +21,7 @@ jobs:
                   coverage: none
 
             - name: Cache composer dependencies
-              uses: actions/cache@v1
+              uses: actions/cache@v2
               with:
                   path: vendor
                   key: composer-${{ hashFiles('composer.lock') }}
@@ -30,4 +30,4 @@ jobs:
               run: composer install -n --prefer-dist
 
             - name: Run psalm
-              run: ./vendor/bin/psalm -c psalm.xml
+              run: ./vendor/bin/psalm

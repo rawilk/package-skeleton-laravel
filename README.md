@@ -1,4 +1,4 @@
-# :package_description
+# :package_name
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rawilk/:package_name.svg?style=flat-square)](https://packagist.org/packages/rawilk/:package_name)
 ![Tests](https://github.com/rawilk/:package_name/workflows/Tests/badge.svg?style=flat-square)
@@ -13,7 +13,7 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require rawilk/package-skeleton-laravel
+composer require :vendor_name/:package_name
 ```
 
 You can publish and run the migrations with:
@@ -54,7 +54,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Security
 
