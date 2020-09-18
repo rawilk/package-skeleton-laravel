@@ -28,7 +28,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Rawilk\\Skeleton\\": "src"
+            "Rawilk\\Skeleton\\": "src",
+            "Rawilk\\Skeleton\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
