@@ -2,6 +2,7 @@
 
 namespace Rawilk\Skeleton\Tests;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Rawilk\Skeleton\SkeletonServiceProvider;
 
@@ -11,7 +12,9 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        $this->withFactories(__DIR__ . '/database/factories');
+        Factory::guessFactoryNamesUsing(
+            fn (string $modelName) => 'Rawilk\\Skeleton\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+        );
     }
 
     protected function getPackageProviders($app): array
