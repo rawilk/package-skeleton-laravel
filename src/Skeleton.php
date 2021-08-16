@@ -1,6 +1,6 @@
 <?php
 
-namespace Rawilk\Skeleton;
+namespace VendorName\Skeleton;
 
 class Skeleton
 {

@@ -1,10 +1,16 @@
 # :package_name
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/rawilk/:package_name.svg?style=flat-square)](https://packagist.org/packages/rawilk/:package_name)
-![Tests](https://github.com/rawilk/:package_name/workflows/Tests/badge.svg?style=flat-square)
-[![Total Downloads](https://img.shields.io/packagist/dt/rawilk/:package_name.svg?style=flat-square)](https://packagist.org/packages/rawilk/:package_name)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vendor_slug/package_slug/run-tests?label=tests)](https://github.com/vendor_slug/package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/vendor_slug/package_slug.svg?style=flat-square)](https://packagist.org/packages/vendor_slug/package_slug)
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can also run `configure-skeleton.sh` to do this automatically.
+---
+This repo can be used to scaffold a Laravel package. Follow these steps to get started:
+
+1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this skeleton.
+2. Run `./configure-skeleton.sh` to run the script that will replace all placeholders throughout all the files.
+3. Remove this block of text.
+---
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -13,33 +19,28 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require :vendor_name/:package_name
+composer require vendor_slug/package_slug
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Rawilk\Skeleton\SkeletonServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="VendorName\Skeleton\SkeletonServiceProvider" --tag="package_slug-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Rawilk\Skeleton\SkeletonServiceProvider" --tag="config"
+php artisan vendor:publish --provider="VendorName\Skeleton\SkeletonServiceProvider" --tag="package_slug-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
+You can view the default configuration here: https://github.com/vendor_slug/package_slug/blog/main/config/package_slug.php
 
 ## Usage
 
 ``` php
-$skeleton = new Rawilk\Skeleton;
-echo $skeleton->echoPhrase('Hello, Rawilk!');
+$skeleton = new VendorName\Skeleton;
+echo $skeleton->echoPhrase('Hello, VendorName!');
 ```
 
 ## Testing

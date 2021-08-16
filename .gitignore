@@ -6,6 +6,7 @@
 build
 composer.lock
 coverage
+node_modules
 phpunit.xml
 psalm.xml
 vendor

@@ -1,11 +1,11 @@
 <?php
 
-namespace Rawilk\Skeleton\Facades;
+namespace VendorName\Skeleton\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Rawilk\Skeleton\Skeleton
+ * @see \VendorName\Skeleton\Skeleton
  */
 class SkeletonFacade extends Facade
 {

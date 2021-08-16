@@ -1,40 +1,44 @@
 {
-    "name": ":vendor_name/:package_name",
+    "name": "vendor_slug/package_slug",
     "description": ":package_description",
     "keywords": [
         ":vendor_name",
-        ":package_name"
+        "laravel",
+        "package_slug"
     ],
-    "homepage": "https://github.com/rawilk/:package_name",
+    "homepage": "https://github.com/vendor_slug/package_slug",
     "license": "MIT",
     "authors": [
         {
             "name": ":author_name",
-            "email": ":author_email",
+            "email": "author@domain.com",
             "homepage": "https://randallwilk.dev",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4",
-        "illuminate/contracts": "^8.0"
+        "php": "^8.0",
+        "illuminate/contracts": "^8.37",
+        "spatie/laravel-package-tools": "^1.4"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
-        "orchestra/testbench": "^6.0",
+        "nunomaduro/collision": "^5.3",
+        "orchestra/testbench": "^6.15",
         "phpunit/phpunit": "^9.3",
-        "psalm/plugin-laravel": "^1.4",
-        "vimeo/psalm": "^3.11"
+        "psalm/plugin-laravel": "^1.5",
+        "spatie/laravel-ray": "^1.24",
+        "vimeo/psalm": "^4.8"
     },
     "autoload": {
         "psr-4": {
-            "Rawilk\\Skeleton\\": "src",
-            "Rawilk\\Skeleton\\Database\\Factories\\": "database/factories"
+            "VendorName\\Skeleton\\": "src",
+            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rawilk\\Skeleton\\Tests\\": "tests"
+            "VendorName\\Skeleton\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,10 +53,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rawilk\\Skeleton\\SkeletonServiceProvider"
+                "VendorName\\Skeleton\\SkeletonServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Rawilk\\Skeleton\\Facades\\SkeletonFacade"
+                "Skeleton": "VendorName\\Skeleton\\Facades\\SkeletonFacade"
             }
         }
     },
