@@ -21,6 +21,7 @@ return (new PhpCsFixer\Config)
         'phpdoc_scalar' => true,
         'unary_operator_spaces' => true,
         'binary_operator_spaces' => true,
+        'new_with_braces' => false,
         'blank_line_before_statement' => [
             'statements' => ['break', 'continue', 'declare', 'return', 'throw', 'try'],
         ],
@@ -35,6 +36,10 @@ return (new PhpCsFixer\Config)
             'on_multiline' => 'ensure_fully_multiline',
             'keep_multiple_spaces_after_comma' => true,
         ],
-        'single_trait_insert_per_statement' => true,
+        // TODO: enable once the github action uses the 3.1.0 release of php-cs-fixer
+        // 'types_spaces' => [
+        //     'space' => 'none',
+        // ],
+        'single_trait_insert_per_statement' => false,
     ])
     ->setFinder($finder);
