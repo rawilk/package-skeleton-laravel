@@ -1,10 +1,10 @@
 <?php
 
-namespace Rawilk\Skeleton\Tests;
+namespace VendorName\Skeleton\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Rawilk\Skeleton\SkeletonServiceProvider;
+use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Rawilk\\Skeleton\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
@@ -26,6 +26,8 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
+        config()->set('database.default', 'testing');
+
         // include_once __DIR__ . '/../database/migrations/create_skeleton_table.php.stub';
         // (new \CreatePackageTable())->up();
     }
