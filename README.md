@@ -8,7 +8,7 @@
 This repo can be used to scaffold a Laravel package. Follow these steps to get started:
 
 1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run `./configure-skeleton.sh` to run the script that will replace all placeholders throughout all the files.
+2. Run `php ./configure.php` to run the script that will replace all placeholders throughout all the files.
 3. Remove this block of text.
 ---
 
@@ -19,7 +19,7 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require vendor_slug/package_slug
+composer require :vendor_slug/:package_slug
 ```
 
 You can publish and run the migrations with:
@@ -34,7 +34,7 @@ You can publish the config file with:
 php artisan vendor:publish --provider="VendorName\Skeleton\SkeletonServiceProvider" --tag="package_slug-config"
 ```
 
-You can view the default configuration here: https://github.com/vendor_slug/package_slug/blog/main/config/package_slug.php
+You can view the default configuration here: https://github.com/:vendor_slug/:package_slug/blob/main/config/:package_slug.php
 
 ## Usage
 
