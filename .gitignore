@@ -7,6 +7,7 @@ build
 composer.lock
 coverage
 node_modules
+phpstan.neon
 phpunit.xml
 psalm.xml
 vendor
