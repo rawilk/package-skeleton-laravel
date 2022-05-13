@@ -1,7 +1,7 @@
 # :package_name
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/run-tests?label=tests)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
+![Tests](https://github.com/:vendor_slug/:package_slug/workflows/Tests/badge.svg?style=flat-square)
 [![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
 
 ---
@@ -25,13 +25,13 @@ composer require :vendor_slug/:package_slug
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="VendorName\Skeleton\SkeletonServiceProvider" --tag=":package_slug-migrations"
+php artisan vendor:publish --tag=":package_slug-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="VendorName\Skeleton\SkeletonServiceProvider" --tag=":package_slug-config"
+php artisan vendor:publish --tag=":package_slug-config"
 ```
 
 You can view the default configuration here: https://github.com/:vendor_slug/:package_slug/blob/main/config/:package_slug.php
