@@ -209,6 +209,7 @@ foreach ($files as $file) {
         'migration_table_name' => title_snake($packageSlug),
         'variable' => $variableName,
         ':package_description' => $description,
+        ':year' => date('Y'),
     ]);
 
     match (true) {
