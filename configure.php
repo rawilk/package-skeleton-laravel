@@ -33,15 +33,14 @@ function run(string $command): string
     return trim((string) shell_exec($command));
 }
 
-function str_after(string $subject, string $search): string
-{
-    $pos = strpos($subject, $search);
+function str_after(string $subject, string $search): string {
+    $pos = strrpos($subject, $search);
 
     if ($pos === false) {
         return $subject;
     }
 
-    return substr($subject, $pos = strlen($search));
+    return substr($subject, $pos + strlen($search));
 }
 
 function slugify(string $subject): string
@@ -82,7 +81,7 @@ function remove_prefix(string $prefix, string $content): string
     return $content;
 }
 
-function remove_composer_deps(array $names)
+function remove_composer_deps(array $names): void
 {
     $data = json_decode(file_get_contents(__DIR__ . '/composer.json'), true);
 
@@ -95,14 +94,13 @@ function remove_composer_deps(array $names)
     file_put_contents(__DIR__ . '/composer.json', json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 }
 
-function remove_composer_script($scriptName)
+function remove_composer_script($scriptName): void
 {
     $data = json_decode(file_get_contents(__DIR__ . '/composer.json'), true);
 
-    foreach ($data['scripts'] as $name => $script) {
+    foreach($data['scripts'] as $name => $script) {
         if ($scriptName === $name) {
             unset($data['scripts'][$name]);
-
             break;
         }
     }

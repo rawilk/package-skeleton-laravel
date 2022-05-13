@@ -6,6 +6,7 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/:vendor_slug/:package_slug?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
 [![License](https://img.shields.io/github/license/:vendor_slug/:package_slug?style=flat-square)](https://github.com/:vendor_slug/:package_slug/blob/main/LICENSE.md)
 
+<!--delete-->
 ---
 This repo can be used to scaffold a Laravel package. Follow these steps to get started:
 
@@ -13,6 +14,7 @@ This repo can be used to scaffold a Laravel package. Follow these steps to get s
 2. Run `php ./configure.php` to run the script that will replace all placeholders throughout all the files.
 3. Remove this block of text.
 ---
+<!--/delete-->
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
