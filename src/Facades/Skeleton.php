@@ -11,6 +11,6 @@ class Skeleton extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'skeleton';
+        return \VendorName\Skeleton\Skeleton::class;
     }
 }
