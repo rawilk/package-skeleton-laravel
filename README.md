@@ -47,6 +47,22 @@ $skeleton = new VendorName\Skeleton;
 echo $skeleton->echoPhrase('Hello, VendorName!');
 ```
 
+## Scripts
+
+### Setup
+For convenience, you can run the setup bin script for easy installation for local development.
+
+```bash
+./bin/setup.sh
+```
+
+### Formatting
+Although formatting is done automatically via workflow, you can format php code locally before committing with a composer script:
+
+```bash
+composer format
+```
+
 ## Testing
 
 ``` bash
