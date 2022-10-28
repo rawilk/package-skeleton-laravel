@@ -170,8 +170,10 @@ $variableName = lcfirst($className);
 $description = ask('Package description', "This is my package {$packageSlug}");
 
 $usePhpStan = confirm('Enable PhpStan?', false);
-$usePhpCsFixer = confirm('Enable PhpCsFixer?', true);
-$useUpdateChangelogWorkflow = confirm('Use automatic changelog updater workflow?', false);
+$useLaravelPint = confirm('Enable Laravel Pint?', true);
+$useDependabot = confirm('Enable Dependabot?', true);
+$useLaravelRay = confirm('Use Ray for debugging?', true);
+$useUpdateChangelogWorkflow = confirm('Use automatic changelog updater workflow?', true);
 
 writeln('------');
 writeln("Author     : {$authorName} ({$authorUsername}, {$authorEmail})");
@@ -181,8 +183,10 @@ writeln("Namespace  : {$vendorNamespace}\\{$className}");
 writeln("Class name : {$className}");
 writeln('---');
 writeln('Packages & Utilities');
-writeln('Use PhpCsFixer       : ' . ($usePhpCsFixer ? 'yes' : 'no'));
+writeln('Use Laravel/Pint     : ' . ($useLaravelPint ? 'yes' : 'no'));
 writeln('Use Larastan/PhpStan : ' . ($usePhpStan ? 'yes' : 'no'));
+writeln('Use Dependabot       : ' . ($useDependabot ? 'yes' : 'no'));
+writeln('Use Ray App          : ' . ($useLaravelRay ? 'yes' : 'no'));
 writeln('Use Auto-Changelog   : ' . ($useUpdateChangelogWorkflow ? 'yes' : 'no'));
 writeln('------');
 
@@ -225,9 +229,10 @@ foreach ($files as $file) {
     };
 }
 
-if (! $usePhpCsFixer) {
-    safeUnlink(__DIR__ . '/.php_cs.dist.php');
-    safeUnlink(__DIR__ . '/.github/workflows/php-cs-fixer.yml');
+if (! $useLaravelPint) {
+    safeUnlink(__DIR__ . '/pint.json');
+    safeUnlink(__DIR__ . '/.github/workflows/pint.yml');
+    remove_composer_script('format');
 }
 
 if (! $usePhpStan) {
@@ -242,7 +247,16 @@ if (! $usePhpStan) {
         'nunomaduro/larastan',
     ]);
 
-    remove_composer_script('phpstan');
+    remove_composer_script('analyse');
+}
+
+if (! $useDependabot) {
+    safeUnlink(__DIR__ . '/.github/dependabot.yml');
+    safeUnlink(__DIR__ . '/.github/workflows/dependabot-auto-merge.yml');
+}
+
+if (! $useLaravelRay) {
+    remove_composer_deps(['spatie/laravel-ray']);
 }
 
 if (! $useUpdateChangelogWorkflow) {
