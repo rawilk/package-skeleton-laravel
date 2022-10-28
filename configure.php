@@ -33,7 +33,8 @@ function run(string $command): string
     return trim((string) shell_exec($command));
 }
 
-function str_after(string $subject, string $search): string {
+function str_after(string $subject, string $search): string
+{
     $pos = strrpos($subject, $search);
 
     if ($pos === false) {
@@ -98,7 +99,7 @@ function remove_composer_script($scriptName): void
 {
     $data = json_decode(file_get_contents(__DIR__ . '/composer.json'), true);
 
-    foreach($data['scripts'] as $name => $script) {
+    foreach ($data['scripts'] as $name => $script) {
         if ($scriptName === $name) {
             unset($data['scripts'][$name]);
             break;
@@ -178,11 +179,11 @@ writeln("Vendor     : {$vendorName} ({$vendorSlug})");
 writeln("Package    : {$packageSlug} <{$description}>");
 writeln("Namespace  : {$vendorNamespace}\\{$className}");
 writeln("Class name : {$className}");
-writeln("---");
-writeln("Packages & Utilities");
-writeln("Use PhpCsFixer       : " . ($usePhpCsFixer ? 'yes' : 'no'));
-writeln("Use Larastan/PhpStan : " . ($usePhpStan ? 'yes' : 'no'));
-writeln("Use Auto-Changelog   : " . ($useUpdateChangelogWorkflow ? 'yes' : 'no'));
+writeln('---');
+writeln('Packages & Utilities');
+writeln('Use PhpCsFixer       : ' . ($usePhpCsFixer ? 'yes' : 'no'));
+writeln('Use Larastan/PhpStan : ' . ($usePhpStan ? 'yes' : 'no'));
+writeln('Use Auto-Changelog   : ' . ($useUpdateChangelogWorkflow ? 'yes' : 'no'));
 writeln('------');
 
 writeln('This script will replace the above values in all relevant files in the project directory.');
