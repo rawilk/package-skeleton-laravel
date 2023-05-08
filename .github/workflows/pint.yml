@@ -18,9 +18,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
+          ref: ${{ github.head_ref }}
 
       - name: Laravel pint
-        uses: aglipanci/laravel-pint-action@1.0.0
+        uses: aglipanci/laravel-pint-action@2.1.0
         with:
           preset: laravel
 
