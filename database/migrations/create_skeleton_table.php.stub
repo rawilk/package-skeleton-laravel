@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('skeleton_table', static function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
 
             // add fields
 
