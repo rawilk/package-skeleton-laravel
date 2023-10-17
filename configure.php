@@ -68,8 +68,8 @@ function replace_in_file(string $file, array $replacements): void
         str_replace(
             array_keys($replacements),
             array_values($replacements),
-            $contents
-        )
+            $contents,
+        ),
     );
 }
 
@@ -102,6 +102,7 @@ function remove_composer_script($scriptName): void
     foreach ($data['scripts'] as $name => $script) {
         if ($scriptName === $name) {
             unset($data['scripts'][$name]);
+
             break;
         }
     }
@@ -115,7 +116,7 @@ function remove_readme_paragraphs(string $file): void
 
     file_put_contents(
         $file,
-        preg_replace('/<!--delete-->.*<!--\/delete-->/s', '', $contents) ?: $contents
+        preg_replace('/<!--delete-->.*<!--\/delete-->/s', '', $contents) ?: $contents,
     );
 }
 
@@ -154,7 +155,7 @@ $authorUsername = ask('Author username', $usernameGuess);
 
 $vendorName = ask('Vendor name', $authorUsername);
 $vendorSlug = slugify($vendorName);
-$vendorNamespace = ucwords($vendorName);
+$vendorNamespace = str_replace('-', '', ucwords($vendorName));
 $vendorNamespace = ask('Vendor namespace', $vendorNamespace);
 
 $currentDirectory = getcwd();
@@ -169,7 +170,7 @@ $className = ask('Class name', $className);
 $variableName = lcfirst($className);
 $description = ask('Package description', "This is my package {$packageSlug}");
 
-$usePhpStan = confirm('Enable PhpStan?', false);
+$usePhpStan = confirm('Enable PhpStan?', true);
 $useLaravelPint = confirm('Enable Laravel Pint?', true);
 $useDependabot = confirm('Enable Dependabot?', true);
 $useLaravelRay = confirm('Use Ray for debugging?', true);
@@ -183,7 +184,7 @@ writeln("Namespace  : {$vendorNamespace}\\{$className}");
 writeln("Class name : {$className}");
 writeln('---');
 writeln('Packages & Utilities');
-writeln('Use Laravel/Pint     : ' . ($useLaravelPint ? 'yes' : 'no'));
+writeln('Use Laravel/Pint       : ' . ($useLaravelPint ? 'yes' : 'no'));
 writeln('Use Larastan/PhpStan : ' . ($usePhpStan ? 'yes' : 'no'));
 writeln('Use Dependabot       : ' . ($useDependabot ? 'yes' : 'no'));
 writeln('Use Ray App          : ' . ($useLaravelRay ? 'yes' : 'no'));
@@ -214,7 +215,6 @@ foreach ($files as $file) {
         'migration_table_name' => title_snake($packageSlug),
         'variable' => $variableName,
         ':package_description' => $description,
-        ':year' => date('Y'),
     ]);
 
     match (true) {
@@ -230,8 +230,11 @@ foreach ($files as $file) {
 }
 
 if (! $useLaravelPint) {
-    safeUnlink(__DIR__ . '/pint.json');
     safeUnlink(__DIR__ . '/.github/workflows/pint.yml');
+    safeUnlink(__DIR__ . '/pint.json');
+
+    remove_composer_deps(['laravel/pint']);
+
     remove_composer_script('format');
 }
 
@@ -241,9 +244,6 @@ if (! $usePhpStan) {
     safeUnlink(__DIR__ . '/.github/workflows/phpstan.yml');
 
     remove_composer_deps([
-        'phpstan/extension-installer',
-        'phpstan/phpstan-deprecation-rules',
-        'phpstan/phpstan-phpunit',
         'nunomaduro/larastan',
     ]);
 
