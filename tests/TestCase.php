@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VendorName\Skeleton\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -26,7 +28,11 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        // include_once __DIR__ . '/../database/migrations/create_skeleton_table.php.stub';
-        // (new \CreatePackageTable())->up();
+        config()->set('database.default', 'testing');
+
+        /*
+        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        $migration->up();
+        */
     }
 }
