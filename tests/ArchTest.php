@@ -25,3 +25,7 @@ test('commands are defined correctly')
     ->toBeClasses()
     ->toExtend(Command::class)
     ->toHaveMethod('handle');
+
+test('strict types are used in tests')
+    ->expect('VendorName\Skeleton\Tests')
+    ->toUseStrictTypes();
